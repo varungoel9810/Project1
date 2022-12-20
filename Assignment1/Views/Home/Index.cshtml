@@ -1,0 +1,58 @@
+﻿@model Assignment1.Models.Table
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <center>
+            <table align="center" height="500px" width="400px">
+                   @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                   {
+                <tr>
+                    <td colspan="2" align="center">
+                    <h1>Registeration Form</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>User ID</td>
+                    <td>@Html.TextBoxFor(m => m.UserId)</td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td>@Html.TextBoxFor(m => m.First_Name)</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>@Html.TextBoxFor(m => m.Last_Name)</td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td>@Html.TextBoxFor(m => m.DOB)</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>@Html.TextBoxFor(m => m.Gender)</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>@Html.TextBoxFor(m => m.Email)</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" onclick="location.href='@Url.Action("SendEmail","Home")'" value="Register Now" />
+                    </td>
+                </tr>
+                   }
+            </table>   
+        </center>
+    </div>
+</body>
+</html>
